@@ -135,7 +135,7 @@ console.log('arrow')
 
   Brownie points if you use a template string
 */
-const exclaimThree = str=> console.log(`${str.toUpperCase()}!!!!`);
+const exclaimThree = str => console.log(`${str.toUpperCase()}!!!!`);
 
 exclaimThree('Jeremy');
 
@@ -286,15 +286,14 @@ let loser = 'Glimmer'
 //CODE HERE
 function theEliminator(par1, par2) {
   for (let i = 0; i < contestants.length; i++){
-    if (i === loser){
-      contestants.splice(contestants[i]);
-      return contestants;
-    }
+    if (contestants[i].includes(loser)){
+      contestants.splice([i], 1);
+    } 
   }
 }
-let newContestants = contestants;
-console.log(theEliminator(contestants, loser));
 
+theEliminator(contestants, loser);
+console.log(contestants);
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
@@ -369,7 +368,7 @@ let totalFrogs2 = maxFrogs2(14)
 console.log(totalFrogs2)
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,3,4,3]
 /*
   Write a function that takes in an array of numbers as an argument. 
   In the body of the function, write logic to determine if the array is in ascending order. 
@@ -378,16 +377,18 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
   Use the sample array to test this function.
 */
 
-//CODE HERE
-function ascending(arr) {
-  for (let i = 0; i < arr.length; i++){
-  if(arr[i+1] <= arr[i]){
+// CODE HERE
+
+function ascending() {
+  for(let i = 0; i = sampleArray.length; i++){
+    if(sampleArray[i+1] <= sampleArray[i]){
       return true;
     } else {
-      return false;
-    }
+    return false
   }
 }
+}
+
 console.log(ascending(sampleArray));
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -414,10 +415,10 @@ function pond() {
 let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = ['sailorDuck', 'duck']
+let bathroomScope = ['sailorDuck', 'rubberDuck', 'duck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = ['sailorDuck', 'rubberduck', 'duck']
+let bathtubScope = ['sailorDuck', 'duck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = ['realduck']
+let pondScope = ['realDuck', 'duck']
